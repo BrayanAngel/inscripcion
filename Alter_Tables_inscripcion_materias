@@ -1,0 +1,10 @@
+ALTER TABLE estudiantes ADD (
+    CONSTRAINT estu_ck_idm CHECK (id_materia IN('E'/*Estudiante*/,'M'/*Materia*/,'I'/*Inscripcion*/)),
+    CONSTRAINT estu_ck_ide CHECK (id_estudiante > 0)
+);
+
+ALTER TABLE inscripcion_materias ADD(
+    CONSTRAINT inscrip_ck_ide CHECK ()
+
+);
+
