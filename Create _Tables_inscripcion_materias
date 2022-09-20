@@ -1,0 +1,33 @@
+-- TABLES BD INSCRIPCION DE ASIGNATURAS SIS_DISTRI 
+-- CREADO POR: BRAYAN ANGEL CASTAÑEDA
+-- FECHA DE CREACION: 18/09/2022
+
+CREATE SCHEMA `inscripcion_materias` ;
+USE `inscripcion_materias`;
+
+CREATE TABLE estudiantes (
+    id_estudiante      	INT(11)      	NOT NULL,
+    numero_documento   	INT(11)     	NOT NULL,
+    tipo_documento     	CHAR(2)        	NOT NULL,
+    nombre_estudiante  	VARCHAR(60)  	NOT NULL,
+    apellido_estudiante VARCHAR(60) 	NOT NULL,
+    estado				CHAR(2)			NOT NULL,
+
+    CONSTRAINT est_pk_ide PRIMARY KEY (id_estudiante)
+);
+
+CREATE TABLE inscripcion_materias(
+	id_estudiante      	INT(11)      	NOT NULL,
+	id_materia			INT(11)			NOT NULL,
+	fecha_inscripcion 	dateTime		NOT NULL,
+);
+
+CREATE TABLE materias(
+	id_materia			INT(11)			NOT NULL,
+	cod_materia 		VARCHAR(60)		NOT NULL,
+	nombre_materia		VARCHAR(60)		NOT NULL,
+	creditos			INT(11)			NOT NULL,
+	cupos				INT(11)			NOT NULL,
+	estado				BOOLEAN			NOT NULL,		
+
+);
